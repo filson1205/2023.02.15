@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="insertMember" >
+		INSERT /* com.greedy.section01.insert.Application#main() */
+		  INTO TBL_MEMBER A
+		(
+  		  A.MEMBER_NO 
+  		, A.MEMBER_ID 
+  		, A.MEMBER_PWD 
+        , A.MEMBER_NAME
+        , A.GENDER 
+        , A.EMAIL 
+        , A.PHONE 
+        , A.ADDRESS 
+        , A.AGE
+  		, A.ENROLL_DATE
+		)
+		VALUES
+		(
+		  SEQ_MEMBER_NO.NEXTVAL
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		)
+	</entry>	
+	<entry key="selectMemberList">
+		SELECT
+	  		  A.MEMBER_NO 
+  			, A.MEMBER_ID 
+  			, A.MEMBER_PWD 
+        	, A.MEMBER_NAME
+        	, A.GENDER 
+        	, A.EMAIL 
+        	, A.PHONE 
+        	, A.ADDRESS 
+        	, A.AGE
+  			, A.ENROLL_DATE
+		  FROM TBL_MEMBER A 
+	</entry>
+	
+	<entry key="selectById">
+		SELECT
+			A. *
+		FROM TBL_MEMBER A
+		WHERE A.MEMBER_ID LIKE ?
+	</entry>
+	
+	<entry key="selectByGender">
+		SELECT
+			A. *
+		FROM TBL_MEMBER A
+		WHERE A.GENDER = ?	
+	</entry>
+	
+	<entry key="updatePwdMember">
+		UPDATE
+			TBL_MEMBER A
+			SET MEMBER_PWD = ?
+		WHERE A.MEMBER_ID = ?
+	</entry>
+
+</properties>
